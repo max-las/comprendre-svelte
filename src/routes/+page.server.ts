@@ -1,8 +1,7 @@
-import { readFileSync } from "node:fs";
+import readComponent from "$lib/node/readComponent";
 
-export function load() {
-  const code = readFileSync("src/routes/+page.svelte", "utf8");
+export const load = () => {
   return {
-    code: code
-  };
+    counterCode: readComponent("Counter")
+  }
 }
