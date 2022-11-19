@@ -5,4 +5,4 @@
   par <a href="https://maximelasserre.com">Maxime Lasserre</a>.
 </p>
 
-<button type="button" class="btn btn-primary">Commencer</button>
+<a class="btn btn-primary" href="/begin" role="button">Commencer <i class="bi bi-chevron-right"></a>
