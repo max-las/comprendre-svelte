@@ -1,4 +1,4 @@
-import readComponent from "$lib/node/readComponent";
+import { readComponent } from "$lib/ts/node";
 
 export const load = () => {
   return {

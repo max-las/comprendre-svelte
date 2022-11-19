@@ -4,4 +4,4 @@ const readComponent = (ref: string) => {
   return readFileSync(`src/lib/svelte/${ref}.svelte`, "utf8");
 }
 
-export default readComponent;
+export { readComponent };
