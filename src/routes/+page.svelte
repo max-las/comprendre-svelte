@@ -1,11 +1,8 @@
-<script lang="ts">
-  import { HighlightSvelte } from "svelte-highlight";
-  import Counter from "$lib/svelte/Counter.svelte";
-  import type { PageData } from "./$types";
-  
-  export let data: PageData;
-</script>
+<h1>Comprendre Svelte</h1>
 
-<h1>Hello</h1>
-<HighlightSvelte code={data.counterCode} />
-<Counter />
+<p>
+  Petit guide touristique de la technologie <a href="https://svelte.dev/">Svelte</a>,
+  par <a href="https://maximelasserre.com">Maxime Lasserre</a>.
+</p>
+
+<button type="button" class="btn btn-primary">Commencer</button>
