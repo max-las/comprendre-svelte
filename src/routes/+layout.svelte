@@ -4,7 +4,7 @@
 
 <script>
   import { navigating } from '$app/stores';
-  import LoadingScreen from '$lib/svelte/LoadingScreen.svelte';
+  import LoadingScreen from '$lib/svelte/loading/LoadingScreen.svelte';
 </script>
 
 {#if $navigating}

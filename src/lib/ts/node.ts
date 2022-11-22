@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 
-const readComponent = (ref: string) => {
-  return readFileSync(`src/lib/svelte/${ref}.svelte`, "utf8");
+const readDemoComponent = (ref: string) => {
+  return readFileSync(`src/lib/svelte/demo/${ref}.svelte`, "utf8");
 }
 
-export { readComponent };
+export { readDemoComponent };
