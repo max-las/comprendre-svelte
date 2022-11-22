@@ -10,6 +10,8 @@
   <h1>Exemple</h1>
   <HighlightSvelte code={data.counterCode} />
   <Counter />
-</div>
 
-# Hello
+  # Hello
+
+  Je suis du **markdown**
+</div>
