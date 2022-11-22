@@ -6,6 +6,8 @@
   export let data: PageData;
 </script>
 
-<h1>Exemple</h1>
-<HighlightSvelte code={data.counterCode} />
-<Counter />
+<div class="container">
+  <h1>Exemple</h1>
+  <HighlightSvelte code={data.counterCode} />
+  <Counter />
+</div>

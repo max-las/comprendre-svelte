@@ -6,4 +6,4 @@
   };
 </script>
 
-<button on:click={increment}>Count: {count}</button>
+<button class="btn btn-primary" on:click={increment}>Nombre de clics : {count}</button>
