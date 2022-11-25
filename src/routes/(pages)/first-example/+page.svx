@@ -1,4 +1,5 @@
 <script lang="ts">
+  import siteData from "$lib/site-data.json";
   import type { PageData } from "./$types";
   import { HighlightSvelte } from "svelte-highlight";
   import Counter from "$lib/svelte/demo/Counter.svelte";
@@ -6,12 +7,10 @@
   export let data: PageData;
 </script>
 
-<div class="container">
-  <h1>Exemple</h1>
-  <HighlightSvelte code={data.counterCode} />
-  <Counter />
+<svelte:head>
+	<title>Premier exemple | { siteData.title }</title>
+</svelte:head>
 
-  # Hello
-
-  Je suis du **markdown**
-</div>
+# Exemple
+<HighlightSvelte code={data.counterCode} />
+<Counter />

@@ -16,13 +16,19 @@
   }
 </style>
 
+<script>
+  import siteData from "$lib/site-data.json";
+</script>
+
 <nav class="navbar navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img src="/icons/svelte.svg" alt="svelte icon">
-      <span>Comprendre Svelte</span>
+      <span>{ siteData.title }</span>
     </a>
   </div>
 </nav>
 
-<slot />
+<div class="container">
+  <slot />
+</div>

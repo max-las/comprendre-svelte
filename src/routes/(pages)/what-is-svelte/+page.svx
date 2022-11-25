@@ -1,0 +1,25 @@
+<script lang="ts">
+  import siteData from "$lib/site-data.json";
+  import type { PageData } from "./$types";
+  import { HighlightSvelte } from "svelte-highlight";
+  import Counter from "$lib/svelte/demo/Counter.svelte";
+  
+  export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>Qu'est-ce que Svelte ? | { siteData.title }</title>
+</svelte:head>
+
+# Qu'est-ce que Svelte ?
+
+Svelte est un framework de développement web orienté front-end s'appuyant fortement sur JavaScript et/ou TypeScript.
+Son objectif est de simplifier et rendre plus agréable le processus de développement, tout en conservant de très bonnes perfomances.
+
+Les fonctionnalités clés de Svelte sont les suivantes :
+- Programmation déclarative
+- Décomposition du code en composants réutilisables
+- Syntaxe plus concise que celle des frameworks concurrents
+- Perfomances supérieures à celles des frameworks concurrents
+
+

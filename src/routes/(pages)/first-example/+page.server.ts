@@ -1,4 +1,4 @@
-import { readDemoComponent } from "$lib/ts/node";
+import { readDemoComponent } from "$lib/server/node";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => {
