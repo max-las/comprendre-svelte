@@ -14,7 +14,7 @@
 
 <script>
   import { fade } from 'svelte/transition';
-  import LoadingIcon from '$lib/svelte/loading/LoadingIcon.svelte';
+  import LoadingIcon from '$lib/components/loading/LoadingIcon.svelte';
 </script>
 
 <div transition:fade>

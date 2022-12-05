@@ -1,0 +1,25 @@
+<script lang="ts">
+  import siteData from "$lib/site-data.json";
+  import Highlight from "svelte-highlight";
+  import xml from "svelte-highlight/languages/xml";
+  import javascript from "svelte-highlight/languages/javascript";
+
+  export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>La programmation déclarative | { siteData.title }</title>
+</svelte:head>
+
+# La programmation déclarative
+
+Traditionnellement, lorsque l'ont écrit un programme, on décrit une suite d'instructions à réaliser
+pour obtenir le résultat souhaité.
+
+Prenons un exemple en JavaScript vanilla.<br>
+Supposons que nous souhaitions réaliser un compteur, sous la forme d'un bouton.
+À chaque clic sur le bouton, la valeur du compteur s'incrémente de 1.
+
+<Highlight language={xml} code={data.buttonHtml} />
+<Highlight language={javascript} code={data.counterJs} />
+

@@ -2,7 +2,7 @@
   import siteData from "$lib/site-data.json";
   import type { PageData } from "./$types";
   import { HighlightSvelte } from "svelte-highlight";
-  import Counter from "$lib/svelte/demo/Counter.svelte";
+  import Counter from "$lib/demo/counter/Counter.svelte";
   
   export let data: PageData;
 </script>
