@@ -1,0 +1,17 @@
+<button id="myButton" class="btn btn-primary">
+  Nombre de clics : <span id="count">0</span>
+</button>
+
+<script>
+  // @ts-nocheck
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    let count = 0;
+
+    document.querySelector("#myButton").addEventListener("click", () => {
+      count++;
+      document.querySelector("#count").textContent = count;
+    });
+  });
+</script>

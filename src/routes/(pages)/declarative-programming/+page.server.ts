@@ -3,7 +3,7 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => {
   return {
-    buttonHtml: readLibFile("demo/counter/button.html"),
-    counterJs: readLibFile("demo/counter/counter.js")
+    CounterVanillaHtml: readLibFile("demo/counter/CounterVanilla.html"),
+    CounterSvelte: readLibFile("demo/counter/Counter.svelte")
   }
 }

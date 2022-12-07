@@ -1,8 +1,9 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
-  import Highlight from "svelte-highlight";
+  import { Highlight, HighlightSvelte } from "svelte-highlight";
   import xml from "svelte-highlight/languages/xml";
-  import javascript from "svelte-highlight/languages/javascript";
+  import CounterVanilla from "$lib/demo/counter/CounterVanilla.svelte";
+  import Counter from "$lib/demo/counter/Counter.svelte";
 
   export let data: PageData;
 </script>
@@ -13,13 +14,63 @@
 
 # La programmation déclarative
 
-Traditionnellement, lorsque l'ont écrit un programme, on décrit une suite d'instructions à réaliser
-pour obtenir le résultat souhaité.
+Traditionnellement, lorsque l'on écrit un programme, on décrit une suite d'instructions à réaliser
+pour obtenir un résultat souhaité. Ce paradigme s'appelle la **programmation impérative**.
 
-Prenons un exemple en JavaScript vanilla.<br>
-Supposons que nous souhaitions réaliser un compteur, sous la forme d'un bouton.
+Prenons un exemple en **JavaScript Vanilla** <small>(c'est-à-dire tel qu'il est supporté nativement par les navigateurs)</small>.
+
+Supposons que l'on souhaite réaliser un compteur de clics, sous la forme d'un bouton. 
 À chaque clic sur le bouton, la valeur du compteur s'incrémente de 1.
 
-<Highlight language={xml} code={data.buttonHtml} />
-<Highlight language={javascript} code={data.counterJs} />
+<small>Code HTML et JavaScript :</small>
+<Highlight language={xml} code={data.CounterVanillaHtml} />
 
+<small>Résultat :</small>
+<div class="block">
+  <CounterVanilla />
+</div>
+
+Dans cet exemple, nous déclarons une variable `count` qui contient la valeur du compteur, initialement à 0.<br>
+Au clic sur le bouton (identifié ici par son *id*), nous devons effectuer trois choses :
+ 1. Incrémenter la valeur de `count` de 1
+ 2. Récupérer la zone d'affichage du compte (identifiée ici par une balise `<span>` pourvue d'un *id*)
+ 3. Mettre à jour le contenu de cette zone pour refléter la nouvelle valeur de `count`
+
+Voyons maintenant comment réaliser ce même compteur en **Svelte**.
+
+<small>Code Svelte :</small>
+<HighlightSvelte code={data.CounterSvelte} />
+
+<small>Résultat :</small>
+<div class="block">
+  <Counter />
+</div>
+
+Nous retrouvons notre variable `count` initialisée à 0.
+Cependant nous pouvons remarquer deux principales différences : 
+ - `count` est directement référencée là où nous souhaitons voir apparaître son contenu dans le HTML,
+   de manière similaire à un langage de templating comme [HandleBars](https://handlebarsjs.com/)
+ - Le code consistant à sélectionner des éléments du DOM et à les mettre à jour a disparu
+
+Pourtant, les changements de valeurs du compte son bel et bien visibles. Svelte sait que si cette valeur
+change, son affichage doit changer aussi, et il s'en charge pour nous.
+
+Ici, **contrairement** à la **programmation impérative**, nous décrivons directement l'état du résultat
+en fonction de certaines variables, puis nous nous contentons de modifier ces variables au cours de l'éxecution.
+C'est ce paradigme qui se nomme **programmation déclarative**.
+
+Cette approche a deux principaux avantages par rapport à l'approche traditionnelle :
+ - Il est plus facile de se représenter le résultat final en jettant un œil au code, ce qui libère un peu la charge mentale
+ - Le code à écrire pour gérer l'affichage est drastiquement réduit, ce qui fait gagner du temps
+
+<hr>
+
+<div class="block">
+  <a class="btn btn-secondary" href="/what-is-svelte">
+    <i class="bi bi-chevron-left"></i> Qu'est-ce que Svelte ?
+  </a>
+
+  <a class="btn btn-primary" href="/reusable-components">
+    Les composants réutilisables <i class="bi bi-chevron-right"></i>
+  </a>
+</div>

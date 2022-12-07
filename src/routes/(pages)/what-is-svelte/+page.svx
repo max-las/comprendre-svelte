@@ -22,6 +22,12 @@ Son objectif est de simplifier et rendre plus agréable le processus de dévelop
 - Syntaxe plus **concise** que celle des frameworks concurrents
 - **Perfomances** supérieures à celles des frameworks concurrents
 
+Nous allons passer en revue chacun de ces aspects.
+
 <hr>
 
-<a class="btn btn-primary" href="/declarative-programming">La programmation déclarative <i class="bi bi-chevron-right"></a>
+<div class="block">
+  <a class="btn btn-primary" href="/declarative-programming">
+    La programmation déclarative <i class="bi bi-chevron-right"></i>
+  </a>
+</div>
