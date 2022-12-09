@@ -1,11 +1,8 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
-  import type { PageData } from "./$types";
   import { HighlightSvelte } from "svelte-highlight";
   import Counter from "$lib/demo/counter/Counter.svelte";
-  
-  export let data: PageData;
 </script>
 
 <svelte:head>

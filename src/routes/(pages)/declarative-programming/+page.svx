@@ -1,6 +1,7 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
+  import type { PageData } from "./$types";
   import { Highlight, HighlightSvelte } from "svelte-highlight";
   import xml from "svelte-highlight/languages/xml";
   import CounterVanilla from "$lib/demo/counter/CounterVanilla.svelte";

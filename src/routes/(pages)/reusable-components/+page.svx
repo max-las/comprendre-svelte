@@ -1,6 +1,12 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
+  import type { PageData } from "./$types";
+  import { HighlightSvelte } from "svelte-highlight";
   import PageNav from "$lib/components/nav/PageNav.svelte";
+  import DogCat from "$lib/demo/dogcat/DogCat.svelte";
+  import DogCatNoLang from "$lib/demo/dogcat/DogCatNoLang.svelte";
+
+  export let data: PageData;
 </script>
 
 <svelte:head>
@@ -12,6 +18,16 @@
 Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représentent des composants.
 Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler
 de différentes manières pour former une page complète.
+
+Voici un exemple de composant Svelte :
+
+<small>DogCat.svelte</small>
+<HighlightSvelte code={data.DogCatNoLang} />
+
+<small>Résultat :</small>
+<div class="block">
+  <DogCat />
+</div>
 
 <hr>
 

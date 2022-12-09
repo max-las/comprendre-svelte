@@ -4,7 +4,7 @@
     text: string
   };
 
-  export let before: linkData, after: linkData;
+  export let before: linkData | null = null, after: linkData | null = null;
 </script>
 
 <div class="block">
