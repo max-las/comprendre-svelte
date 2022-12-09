@@ -1,21 +1,20 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
+  import PageNav from "$lib/components/nav/PageNav.svelte";
 </script>
 
 <svelte:head>
 	<title>Les composants réutilisables | { siteData.title }</title>
 </svelte:head>
 
-# La composants réutilisables
+# Les composants réutilisables
+
+Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représentent des composants.
+Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler
+de différentes manières pour former une page complète.
 
 <hr>
 
-<div class="block">
-  <a class="btn btn-secondary" href="/declarative-programming">
-    <i class="bi bi-chevron-left"></i> La programmation déclarative
-  </a>
-
-  <a class="btn btn-primary" href="/reusable-components">
-    Les composants réutilisables <i class="bi bi-chevron-right"></i>
-  </a>
-</div>
+<PageNav
+  before={{url: "/declarative-programming", text: "La programmation déclarative"}}
+/> 

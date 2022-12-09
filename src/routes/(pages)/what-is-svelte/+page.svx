@@ -1,5 +1,6 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
+  import PageNav from "$lib/components/nav/PageNav.svelte";
   import type { PageData } from "./$types";
   import { HighlightSvelte } from "svelte-highlight";
   import Counter from "$lib/demo/counter/Counter.svelte";
@@ -13,10 +14,10 @@
 
 # Qu'est-ce que Svelte ?
 
-Svelte est un framework de développement web orienté front-end s'appuyant fortement sur JavaScript et/ou TypeScript.
+Svelte est un framework de développement web orienté front-end s'appuyant fortement sur JavaScript.
 Son objectif est de simplifier et rendre plus agréable le processus de développement, tout en conservant de très bonnes perfomances.
 
-**Les fonctionnalités clés de Svelte sont les suivantes :**
+**Les caractéristiques clés de Svelte sont les suivantes :**
 - Programmation **déclarative**
 - Décomposition du code en **composants réutilisables**
 - Syntaxe plus **concise** que celle des frameworks concurrents
@@ -26,8 +27,6 @@ Nous allons passer en revue chacun de ces aspects.
 
 <hr>
 
-<div class="block">
-  <a class="btn btn-primary" href="/declarative-programming">
-    La programmation déclarative <i class="bi bi-chevron-right"></i>
-  </a>
-</div>
+<PageNav
+  after={{url: "/declarative-programming", text: "La programmation déclarative"}}
+/> 
