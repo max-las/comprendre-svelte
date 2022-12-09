@@ -2,8 +2,7 @@
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
   import type { PageData } from "./$types";
-  import { Highlight, HighlightSvelte } from "svelte-highlight";
-  import xml from "svelte-highlight/languages/xml";
+  import Prism from 'svelte-prism';
   import CounterVanilla from "$lib/demo/counter/CounterVanilla.svelte";
   import Counter from "$lib/demo/counter/Counter.svelte";
 
@@ -25,7 +24,7 @@ Supposons que l'on souhaite réaliser un compteur de clics, sous la forme d'un b
 À chaque clic sur le bouton, la valeur du compteur s'incrémente de 1.
 
 <small>Code HTML et JavaScript :</small>
-<Highlight language={xml} code={data.CounterVanillaHtml} />
+<Prism language="html" source={data.CounterVanillaHtml} />
 
 <small>Résultat :</small>
 <div class="block">
@@ -43,7 +42,7 @@ Au clic sur le bouton (identifié ici par son *id*), nous devons effectuer trois
 Voyons maintenant comment réaliser ce même compteur en **Svelte**.
 
 <small>Code Svelte :</small>
-<HighlightSvelte code={data.CounterSvelte} />
+<Prism language="svelte" source={data.CounterSvelte} />
 
 <small>Résultat :</small>
 <div class="block">

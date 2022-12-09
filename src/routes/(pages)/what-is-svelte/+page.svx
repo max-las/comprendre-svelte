@@ -1,7 +1,7 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
-  import { HighlightSvelte } from "svelte-highlight";
+  import Prism from 'svelte-prism';
   import Counter from "$lib/demo/counter/Counter.svelte";
 </script>
 

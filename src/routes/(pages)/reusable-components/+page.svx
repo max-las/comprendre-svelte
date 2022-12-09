@@ -1,8 +1,8 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
   import type { PageData } from "./$types";
-  import { HighlightSvelte } from "svelte-highlight";
   import PageNav from "$lib/components/nav/PageNav.svelte";
+  import Prism from 'svelte-prism';
   import DogCat from "$lib/demo/dogcat/DogCat.svelte";
   import DogCatNoLang from "$lib/demo/dogcat/DogCatNoLang.svelte";
 
@@ -22,7 +22,7 @@ de différentes manières pour former une page complète.
 Voici un exemple de composant Svelte :
 
 <small>DogCat.svelte</small>
-<HighlightSvelte code={data.DogCatNoLang} />
+<Prism language="svelte" source={data.DogCatNoLang} />
 
 <small>Résultat :</small>
 <div class="block">
