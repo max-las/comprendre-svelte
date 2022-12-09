@@ -3,7 +3,7 @@ import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = () => {
   return {
-    DogCatNoLang: readLibFile("demo/dogcat/DogCatNoLang.svelte"),
-    DogCat: readLibFile("demo/dogcat/DogCat.svelte")
+    DogCat: readLibFile("demo/dogcat/DogCat.svelte"),
+    DogCatFrame: readLibFile("demo/dogcat/DogCatFrame.svelte")
   }
 }

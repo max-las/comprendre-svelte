@@ -1,18 +1,16 @@
-<style lang="scss">
+<style>
   div {
     max-width: 300px;
+  }
 
-    img {
-      &.pet {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
+  div img.pet {
+    width: 100%;
+    margin-bottom: 10px;
   }
 </style>
 
-<script lang="ts">
-  let selected: string = "dog";
+<script>
+  let selected = "dog";
 </script>
 
 <div>
@@ -27,4 +25,3 @@
     <option value={"cat"}>Chat</option>
   </select>
 </div>
-
