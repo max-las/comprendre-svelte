@@ -42,10 +42,10 @@ de base est celle de HTML, mais avec quelques particularités qui ne sont pas sa
 les langages de templating. Il est par exemple possible, comme ici, d'écrire des conditions `if` directement 
 à l'intérieur.
 
-Le style est enveloppé dans une balise `<style>` et peut s'écrire évidemment en CSS, mais aussi en SCSS
-par exemple, simplement en ajoutant un attribut `lang="scss"` à la balise.<br/>
+Le style est enveloppé dans une balise `<style>` et peut s'écrire évidemment en CSS, mais aussi en
+[SCSS](https://sass-lang.com/guide) par exemple, simplement en ajoutant un attribut `lang="scss"` à la balise.<br/>
 De manière analogue, le script s'écrit dans une balise `<script>`, par défaut en JavaScript, mais
-il peut aussi s'écrire en TypeScript avec l'attribut `lang="ts"`.
+il peut aussi s'écrire en [TypeScript](https://www.typescriptlang.org/) avec l'attribut `lang="ts"`.
 
 <hr>
 

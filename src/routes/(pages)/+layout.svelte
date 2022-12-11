@@ -25,18 +25,20 @@
   let containerComputedStyle: CSSStyleDeclaration;
 
   let windowWidth: number = 0;
-  let documentWidth: number = 0;
   let containerWidth: number = 0;
+  let documentWidth: number;
+  let doc: Document;
 
   const containerPaddingX = () => parseFloat(containerComputedStyle?.paddingLeft) || 0;
 
   onMount(() => {
 		containerComputedStyle = getComputedStyle(container);
+    doc = document;
 	});
 
   $: {
     windowWidth;
-    documentWidth = document.documentElement.clientWidth;
+    documentWidth = doc?.documentElement.clientWidth || 0;
   }
 
   $: {

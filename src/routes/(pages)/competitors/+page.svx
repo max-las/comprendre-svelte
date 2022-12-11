@@ -1,0 +1,21 @@
+<script lang="ts">
+  import siteData from "$lib/site-data.json";
+  import type { PageData } from "./$types";
+  import PageNav from "$lib/components/nav/PageNav.svelte";
+
+  export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>Les concurrents | { siteData.title }</title>
+</svelte:head>
+
+# Les concurrents
+
+Svelte n'est pas le premier framework à proposer une approche à base de composants à la syntaxe 
+plus ou moins déclarative. Les deux principaux concurrents qui lui précèdent sont [React](https://fr.reactjs.org/)
+et [Vue.js](https://vuejs.org/).
+
+<PageNav
+  before={{url: "/reusable-components", text: "Les composants réutilisables"}}
+/> 
