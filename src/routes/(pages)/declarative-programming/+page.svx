@@ -66,8 +66,6 @@ Cette approche a deux principaux avantages par rapport à l'approche traditionne
  - Il est plus facile de se représenter le résultat final en jettant un œil au code, ce qui libère un peu la charge mentale
  - Le code à écrire pour gérer l'affichage est drastiquement réduit, ce qui fait gagner du temps
 
-<hr>
-
 <PageNav
   before={{url: "/what-is-svelte", text: "Qu'est-ce que Svelte ?"}}
   after={{url: "/reusable-components", text: "Les composants réutilisables"}}

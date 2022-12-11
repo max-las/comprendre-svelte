@@ -49,7 +49,7 @@ il peut aussi s'écrire en TypeScript avec l'attribut `lang="ts"`.
 
 <hr>
 
-L'une des forces des composants est qu'il sont **isolés**. C'est-à-dire que, par défaut, tout style ou
+L'une des forces des composants est qu'ils sont **isolés**. C'est-à-dire que, par défaut, tout style ou
 script écrit dans un composant est s'inscrit uniquement dans le contexte de celui-ci. Autrement dit, il ne peut pas
 affecter d'autre composants par accident.
 *(Il est toutefois possible, au besoin, de partager explicitement certains styles et scripts entre plusieurs composants.)*
@@ -76,8 +76,7 @@ Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu
 plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui
 permet encore d'éviter des effets de bord inattendus.
 
-<hr>
-
 <PageNav
   before={{url: "/declarative-programming", text: "La programmation déclarative"}}
+  after={{url: "/competitors", text: "Les concurrents"}}
 /> 

@@ -17,12 +17,10 @@ Son objectif est de simplifier et rendre plus agréable le processus de dévelop
 **Les caractéristiques clés de Svelte sont les suivantes :**
 - Programmation **déclarative**
 - Décomposition du code en **composants réutilisables**
-- Syntaxe plus **concise** que celle des frameworks concurrents
 - **Perfomances** supérieures à celles des frameworks concurrents
+- Syntaxe plus **concise** que celle des frameworks concurrents
 
 Nous allons passer en revue chacun de ces aspects.
-
-<hr>
 
 <PageNav
   after={{url: "/declarative-programming", text: "La programmation déclarative"}}
