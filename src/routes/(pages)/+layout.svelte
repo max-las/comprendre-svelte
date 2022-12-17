@@ -21,32 +21,29 @@
   import { containerSideWidth } from '$lib/stores';
   import { onMount } from 'svelte';
   
-  let container: Element;
+  let container: HTMLElement;
+  let containerWidth: number;
   let containerComputedStyle: CSSStyleDeclaration;
-
-  let windowWidth: number = 0;
-  let containerWidth: number = 0;
   let documentWidth: number;
-  let doc: Document;
 
-  const containerPaddingX = () => parseFloat(containerComputedStyle?.paddingLeft) || 0;
+  const setDocumentWidth = (entries: ResizeObserverEntry[]) => {
+    documentWidth = entries[0].contentBoxSize[0].inlineSize;
+  }
+
+  $: {
+    if (containerComputedStyle) {
+      const containerPaddingLeft = parseFloat(containerComputedStyle.paddingLeft);
+      $containerSideWidth = ((documentWidth - containerWidth) / 2) + containerPaddingLeft;
+    }
+  }
 
   onMount(() => {
+    documentWidth = document.documentElement.clientWidth;
+    const documentObserver = new ResizeObserver(setDocumentWidth);
+    documentObserver.observe(document.documentElement);
 		containerComputedStyle = getComputedStyle(container);
-    doc = document;
 	});
-
-  $: {
-    windowWidth;
-    documentWidth = doc?.documentElement.clientWidth || 0;
-  }
-
-  $: {
-    $containerSideWidth = ((documentWidth - containerWidth) / 2) + containerPaddingX();
-  }
 </script>
-
-<svelte:window bind:innerWidth={windowWidth}/>
 
 <nav class="navbar navbar-light">
   <div class="container-fluid">
