@@ -15,11 +15,11 @@
 <script>
   let taskList = [];
   let lastId = 0;
-  let text = '';
+  let text = "";
 
   const addTask = () => {
     taskList = [...taskList, { text, id: ++lastId }];
-    text = '';
+    text = "";
   };
 
   const removeTask = (id) => {
