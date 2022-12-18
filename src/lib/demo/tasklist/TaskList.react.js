@@ -22,7 +22,7 @@ function TaskList() {
   };
 
   const removeTask = (id) => {
-    setTaskList(taskList.filter((task) => task.id !== id));
+    setTaskList(taskList.filter(task => task.id !== id));
   };
 
   return (

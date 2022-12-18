@@ -23,7 +23,7 @@
   };
 
   const removeTask = (id) => {
-    taskList = taskList.filter((task) => task.id !== id);
+    taskList = taskList.filter(task => task.id !== id);
   };
 </script>
 

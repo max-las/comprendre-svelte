@@ -1,8 +1,12 @@
 <script lang="ts">
   import siteData from "$lib/site-data.json";
-  import type { PageData } from "./$types";
   import PageNav from "$lib/components/nav/PageNav.svelte";
+  import type { PageData } from "./$types";
+  import Prism from 'svelte-prism';
+  import loadLanguages from 'prismjs/components/';
   import TaskList from "$lib/demo/tasklist/TaskList.svelte";
+
+  loadLanguages(['jsx']);
 
   export let data: PageData;
 </script>
@@ -20,6 +24,12 @@ Svelte n'est pas le premier framework à proposer une approche à base de compos
 Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons examiner le code permettant d'obtenir le composant suivant (une liste de tâches) pour chacun de ces frameworks :
 
 <TaskList />
+
+<small>TaskList.svelte</small>
+<Prism language="svelte" source={data.TaskListSvelte} />
+
+<small>TaskList.js</small>
+<Prism language="jsx" source={data.TaskListReact} />
 
 <PageNav
   before={{url: "/reusable-components", text: "Les composants réutilisables"}}
