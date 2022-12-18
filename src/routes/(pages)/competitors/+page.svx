@@ -2,7 +2,7 @@
   import siteData from "$lib/site-data.json";
   import type { PageData } from "./$types";
   import PageNav from "$lib/components/nav/PageNav.svelte";
-  import List from "$lib/demo/list/List.svelte";
+  import TaskList from "$lib/demo/tasklist/TaskList.svelte";
 
   export let data: PageData;
 </script>
@@ -13,15 +13,13 @@
 
 # Les concurrents
 
-Svelte n'est pas le premier framework à proposer une approche à base de composants à la syntaxe 
-plus ou moins déclarative. Les deux principaux concurrents qui lui précèdent sont [React](https://fr.reactjs.org/)
-et [Vue.js](https://vuejs.org/). Voyons en quoi Svelte se différencie de ces derniers.
+Svelte n'est pas le premier framework à proposer une approche à base de composants à la syntaxe plus ou moins déclarative. Les deux principaux concurrents qui lui précèdent sont [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/). Voyons en quoi Svelte se différencie de ces derniers.
 
 ## La syntaxe
 
-Commençons par comparer leurs syntaxes à celle de Svelte. Pour cela
+Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons examiner le code permettant d'obtenir le composant suivant (une liste de tâches) pour chacun de ces frameworks :
 
-<List />
+<TaskList />
 
 <PageNav
   before={{url: "/reusable-components", text: "Les composants réutilisables"}}

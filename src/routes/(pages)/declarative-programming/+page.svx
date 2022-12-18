@@ -15,13 +15,11 @@
 
 # La programmation déclarative
 
-Traditionnellement, lorsque l'on écrit un programme, on décrit une suite d'instructions à réaliser
-pour obtenir un résultat souhaité. Ce paradigme s'appelle la **programmation impérative**.
+Traditionnellement, lorsque l'on écrit un programme, on décrit une suite d'instructions à réaliser pour obtenir un résultat souhaité. Ce paradigme s'appelle la **programmation impérative**.
 
 Prenons un exemple en **JavaScript Vanilla** <small>(c'est-à-dire tel qu'il est supporté nativement par les navigateurs)</small>.
 
-Supposons que l'on souhaite réaliser un compteur de clics, sous la forme d'un bouton. 
-À chaque clic sur le bouton, la valeur du compteur s'incrémente de 1.
+Supposons que l'on souhaite réaliser un compteur de clics, sous la forme d'un bouton. À chaque clic sur le bouton, la valeur du compteur s'incrémente de 1.
 
 <small>Code HTML et JavaScript :</small>
 <Prism language="html" source={data.CounterVanillaHtml} />
@@ -51,16 +49,12 @@ Voyons maintenant comment réaliser ce même compteur en **Svelte**.
 
 Nous retrouvons notre variable `count` initialisée à 0.
 Cependant nous pouvons remarquer deux principales différences : 
- - `count` est directement référencée là où nous souhaitons voir apparaître son contenu dans le HTML,
-   de manière similaire à un langage de templating comme [HandleBars](https://handlebarsjs.com/)
+ - `count` est directement référencée là où nous souhaitons voir apparaître son contenu dans le HTML, de manière similaire à un langage de templating comme [HandleBars](https://handlebarsjs.com/)
  - Le code consistant à sélectionner des éléments du DOM et à les mettre à jour a disparu
 
-Pourtant, les changements de valeurs du compte son bel et bien visibles. Svelte sait que si cette valeur
-change, son affichage doit changer aussi, et il s'en charge pour nous.
+Pourtant, les changements de valeurs du compte son bel et bien visibles. Svelte sait que si cette valeur change, son affichage doit changer aussi, et il s'en charge pour nous.
 
-Ici, **contrairement** à la **programmation impérative**, nous décrivons directement l'état du résultat
-en fonction de certaines variables, puis nous nous contentons de modifier ces variables au gré des interactions.
-C'est ce paradigme qui se nomme **programmation déclarative**.
+Ici, **contrairement** à la **programmation impérative**, nous décrivons directement l'état du résultat en fonction de certaines variables, puis nous nous contentons de modifier ces variables au gré des interactions. C'est ce paradigme qui se nomme **programmation déclarative**.
 
 Cette approche a deux principaux avantages par rapport à l'approche traditionnelle :
  - Il est plus facile de se représenter le résultat final en jettant un œil au code, ce qui libère un peu la charge mentale

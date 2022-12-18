@@ -15,9 +15,7 @@
 
 # Les composants réutilisables
 
-Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représentent des composants.
-Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler
-de différentes manières pour former une page complète.
+Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représentent des composants. Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler de différentes manières pour former une page complète.
 
 Voici un exemple de composant Svelte :
 
@@ -33,34 +31,21 @@ Ce composant affiche l'image d'un chien ou d'un chat en fonction de la sélectio
 
 <hr>
 
-Un composant comporte toujours une partie template, et peut éventuellement
-comporter une partie style et une partie script; ces
-deux dernières étant facultatives.
+Un composant comporte toujours une partie template, et peut éventuellement comporter une partie style et une partie script; ces deux dernières étant facultatives.
 
-Le template n'est délimité par aucune balise, il s'écrit directement dans le composant. La syntaxe
-de base est celle de HTML, mais avec quelques particularités qui ne sont pas sans rappeller, une nouvelle fois,
-les langages de templating. Il est par exemple possible, comme ici, d'écrire des conditions `if` directement 
-à l'intérieur.
+Le template n'est délimité par aucune balise, il s'écrit directement dans le composant. La syntaxe de base est celle de HTML, mais avec quelques particularités qui ne sont pas sans rappeller, une nouvelle fois, les langages de templating. Il est par exemple possible, comme ici, d'écrire des conditions `if` directement à l'intérieur.
 
-Le style est enveloppé dans une balise `<style>` et peut s'écrire évidemment en CSS, mais aussi en
-[SCSS](https://sass-lang.com/guide) par exemple, simplement en ajoutant un attribut `lang="scss"` à la balise.<br/>
-De manière analogue, le script s'écrit dans une balise `<script>`, par défaut en JavaScript, mais
-il peut aussi s'écrire en [TypeScript](https://www.typescriptlang.org/) avec l'attribut `lang="ts"`.
+Le style est enveloppé dans une balise `<style>` et peut s'écrire évidemment en CSS, mais aussi en [SCSS](https://sass-lang.com/guide) par exemple, simplement en ajoutant un attribut `lang="scss"` à la balise.<br/>
+De manière analogue, le script s'écrit dans une balise `<script>`, par défaut en JavaScript, mais il peut aussi s'écrire en [TypeScript](https://www.typescriptlang.org/) avec l'attribut `lang="ts"`.
 
 <hr>
 
-L'une des forces des composants est qu'ils sont **isolés**. C'est-à-dire que, par défaut, tout style ou
-script écrit dans un composant est s'inscrit uniquement dans le contexte de celui-ci. Autrement dit, il ne peut pas
-affecter d'autre composants par accident.
+L'une des forces des composants est qu'ils sont **isolés**. C'est-à-dire que, par défaut, tout style ou script écrit dans un composant est s'inscrit uniquement dans le contexte de celui-ci. Autrement dit, il ne peut pas affecter d'autre composants par accident.
 *(Il est toutefois possible, au besoin, de partager explicitement certains styles et scripts entre plusieurs composants.)*
 
-Mais ils sont aussi **réutilisables**, ce qui en fait des outils très pratiques pour éviter la duplication de code.
-En effet, il suffit de copier un code qui se répéte souvent dans un composant et d'insérer ce composant à la place.
-Ceci permet d'éviter les modifications fastidieuses d'un même code à plusieurs endroits, et donc les éventuelles
-disparités dues à des oublis.
+Mais ils sont aussi **réutilisables**, ce qui en fait des outils très pratiques pour éviter la duplication de code. En effet, il suffit de copier un code qui se répéte souvent dans un composant et d'insérer ce composant à la place. Ceci permet d'éviter les modifications fastidieuses d'un même code à plusieurs endroits, et donc les éventuelles disparités dues à des oublis.
 
-Les composants sont assemblés en s'insérant les uns dans les autres. Pour ajouter un composant, il suffit
-de l'importer via un `import` en JavaScript, puis de placer une balise HTML qui porte son nom.
+Les composants sont assemblés en s'insérant les uns dans les autres. Pour ajouter un composant, il suffit de l'importer via un `import` en JavaScript, puis de placer une balise HTML qui porte son nom.
 
 Voici par exemple un composant qui ajoute un cadre orange au composant précédent :
 
@@ -72,9 +57,7 @@ Voici par exemple un composant qui ajoute un cadre orange au composant précéde
   <DogCatFrame />
 </div>
 
-Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu du même composant situé
-plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui
-permet encore d'éviter des effets de bord inattendus.
+Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu du même composant situé plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui permet encore d'éviter des effets de bord inattendus.
 
 <PageNav
   before={{url: "/declarative-programming", text: "La programmation déclarative"}}

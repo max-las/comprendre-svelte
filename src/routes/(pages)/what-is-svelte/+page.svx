@@ -11,8 +11,7 @@
 
 # Qu'est-ce que Svelte ?
 
-Svelte est un framework de développement web orienté front-end s'appuyant fortement sur JavaScript.
-Son objectif est de simplifier et rendre plus agréable le processus de développement, tout en conservant de très bonnes perfomances.
+Svelte est un framework de développement web orienté front-end s'appuyant fortement sur JavaScript. Son objectif est de simplifier et rendre plus agréable le processus de développement, tout en conservant de très bonnes perfomances.
 
 **Les caractéristiques clés de Svelte sont les suivantes :**
 - Programmation **déclarative**

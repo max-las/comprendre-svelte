@@ -1,11 +1,11 @@
 <style>
-  div {
+  .content {
     max-width: 300px;
   }
 
-  div img.pet {
+  img.pet {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
   }
 </style>
 
@@ -13,7 +13,7 @@
   let selected = "dog";
 </script>
 
-<div>
+<div class="content">
   {#if selected === "dog"}
     <img class="pet" alt="dog" src="/images/dog.jpg">
   {:else if selected === "cat"}
