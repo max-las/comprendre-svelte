@@ -1,9 +1,11 @@
-import { readLibFile } from "$lib/server/node";
+import { highlightLibFiles } from "$lib/server/node";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = () => {
+export const load: PageServerLoad = async () => {
   return {
-    DogCat: readLibFile("demo/dogcat/DogCat.svelte"),
-    DogCatFrame: readLibFile("demo/dogcat/DogCatFrame.svelte")
-  }
+    highlighted: await highlightLibFiles([
+      { libPath: "demo/dogcat/DogCat.svelte", lang: "svelte" },
+      { libPath: "demo/dogcat/DogCatFrame.svelte", lang: "svelte" }
+    ])
+  };
 }

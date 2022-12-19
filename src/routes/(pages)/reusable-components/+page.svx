@@ -2,7 +2,6 @@
   import siteData from "$lib/site-data.json";
   import type { PageData } from "./$types";
   import PageNav from "$lib/components/nav/PageNav.svelte";
-  import Prism from 'svelte-prism';
   import DogCat from "$lib/demo/dogcat/DogCat.svelte";
   import DogCatFrame from "$lib/demo/dogcat/DogCatFrame.svelte";
 
@@ -20,7 +19,7 @@ Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représe
 Voici un exemple de composant Svelte :
 
 <small>DogCat.svelte</small>
-<Prism language="svelte" source={data.DogCat} />
+{@html data.highlighted.DogCatSvelte}
 
 Ce composant affiche l'image d'un chien ou d'un chat en fonction de la sélection de l'utilisateur.
 
@@ -50,7 +49,7 @@ Les composants sont assemblés en s'insérant les uns dans les autres. Pour ajou
 Voici par exemple un composant qui ajoute un cadre orange au composant précédent :
 
 <small>DogCatFrame.svelte</small>
-<Prism language="svelte" source={data.DogCatFrame} />
+{@html data.highlighted.DogCatFrameSvelte}
 
 <small>Résultat :</small>
 <div class="block">

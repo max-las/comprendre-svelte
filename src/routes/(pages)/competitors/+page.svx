@@ -2,11 +2,7 @@
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
   import type { PageData } from "./$types";
-  import Prism from 'svelte-prism';
-  import loadLanguages from 'prismjs/components/';
   import TaskList from "$lib/demo/tasklist/TaskList.svelte";
-
-  loadLanguages(['jsx']);
 
   export let data: PageData;
 </script>
@@ -26,10 +22,13 @@ Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons e
 <TaskList />
 
 <small>TaskList.svelte</small>
-<Prism language="svelte" source={data.TaskListSvelte} />
+{@html data.highlighted.TaskListSvelte}
 
 <small>TaskList.js</small>
-<Prism language="jsx" source={data.TaskListReact} />
+{@html data.highlighted.TaskListReactJs}
+
+<small>TaskList.vue</small>
+{@html data.highlighted.TaskListVue}
 
 <PageNav
   before={{url: "/reusable-components", text: "Les composants réutilisables"}}

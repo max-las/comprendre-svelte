@@ -32,8 +32,6 @@
     "@sveltejs/adapter-static": "1.0.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
-    "prism-themes": "^1.9.0",
-    "prismjs": "^1.29.0",
-    "svelte-prism": "^1.1.6"
+    "shiki": "^0.12.1"
   }
 }

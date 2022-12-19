@@ -1,9 +1,11 @@
-import { readLibFile } from "$lib/server/node";
+import { highlightLibFiles } from "$lib/server/node";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = () => {
+export const load: PageServerLoad = async () => {
   return {
-    CounterVanillaHtml: readLibFile("demo/counter/CounterVanilla.html"),
-    CounterSvelte: readLibFile("demo/counter/Counter.svelte")
-  }
+    highlighted: await highlightLibFiles([
+      { libPath: "demo/counter/CounterVanilla.html", lang: "html" },
+      { libPath: "demo/counter/Counter.svelte", lang: "svelte" },
+    ])
+  };
 }
