@@ -18,7 +18,7 @@ Svelte n'est pas le premier framework à proposer une approche à base de compos
 
 ## La syntaxe
 
-Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons examiner le code permettant d'obtenir le composant suivant (une liste de tâches) pour chacun de ces frameworks :
+Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons examiner le code permettant d'obtenir le composant suivant (une liste de tâches) pour chacun de ces frameworks&nbsp;:
 
 <TaskList />
 
@@ -30,5 +30,5 @@ Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons e
   ]} />
 
 <PageNav
-  before={{url: "/reusable-components", text: "Les composants réutilisables"}}
+  before={{ url: "/reusable-components", text: "Les composants réutilisables" }}
 /> 

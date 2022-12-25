@@ -60,6 +60,6 @@ Cette approche a deux principaux avantages par rapport à l'approche traditionne
  - Le code à écrire pour gérer l'affichage est drastiquement réduit, ce qui fait gagner du temps
 
 <PageNav
-  before={{url: "/what-is-svelte", text: "Qu'est-ce que Svelte ?"}}
-  after={{url: "/reusable-components", text: "Les composants réutilisables"}}
+  before={{ url: "/what-is-svelte", text: "Qu'est-ce que Svelte ?" }}
+  after={{ url: "/reusable-components", text: "Les composants réutilisables" }}
 /> 

@@ -59,6 +59,6 @@ Voici par exemple un composant qui ajoute un cadre orange au composant précéde
 Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu du même composant situé plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui permet encore d'éviter des effets de bord inattendus.
 
 <PageNav
-  before={{url: "/declarative-programming", text: "La programmation déclarative"}}
-  after={{url: "/competitors", text: "Les concurrents"}}
+  before={{ url: "/declarative-programming", text: "La programmation déclarative" }}
+  after={{ url: "/competitors", text: "Les concurrents" }}
 /> 
