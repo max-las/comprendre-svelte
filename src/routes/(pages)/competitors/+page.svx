@@ -3,6 +3,7 @@
   import PageNav from "$lib/components/nav/PageNav.svelte";
   import type { PageData } from "./$types";
   import TaskList from "$lib/demo/tasklist/TaskList.svelte";
+  import Compare from "$lib/components/competitors/Compare.svelte";
 
   export let data: PageData;
 </script>
@@ -21,14 +22,12 @@ Afin de comparer la syntaxe de React et Vue.js à celle de Svelte, nous allons e
 
 <TaskList />
 
-<small>TaskList.svelte</small>
-{@html data.highlighted.TaskListSvelte}
-
-<small>TaskList.js</small>
-{@html data.highlighted.TaskListReactJs}
-
-<small>TaskList.vue</small>
-{@html data.highlighted.TaskListVue}
+<Compare
+  subject={{ fileName: "TaskList.svelte", code: data.highlighted.TaskListSvelte }}
+  competitors={[
+    { fileName: "TaskList.js", selectName: "React", code: data.highlighted.TaskListReactJs },
+    { fileName: "TaskList.vue", selectName: "Vue.js", code: data.highlighted.TaskListVue }
+  ]} />
 
 <PageNav
   before={{url: "/reusable-components", text: "Les composants réutilisables"}}
