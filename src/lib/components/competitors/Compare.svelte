@@ -11,29 +11,35 @@
     hr {
       flex-grow: 1;
     }
+
+    p {
+      margin: 0 8px 0 0;
+    }
   }
 </style>
 
 <script lang="ts">
+  import { selectedCompetitor } from '$lib/stores';
+
   type Subject = {
+    name: string;
     fileName: string;
     code: string;
   };
 
-  type Competitor = Subject & {
-    selectName: string;
-  };
-
   export let subject: Subject;
-  export let competitors: [Competitor, Competitor];
+  export let competitors: [Subject, Subject];
 
   let currentCompetitor: number = 0;
   let selectHeight: number;
+
+  $: $selectedCompetitor = competitors[currentCompetitor].name;
 </script>
 
 <div class="row gx-2">
   <div class="col col-lg-12 col-xl-6">
     <div class="select-ghost" style="height: {selectHeight}px;">
+      <p>{subject.name}</p>
       <hr/>
     </div>
 
@@ -44,7 +50,7 @@
     <div bind:offsetHeight={selectHeight}>
       <select bind:value={currentCompetitor} class="form-select">
         {#each competitors as competitor, i}
-          <option value={i}>{competitor.selectName}</option>
+          <option value={i}>{competitor.name}</option>
         {/each}
       </select>
     </div>
