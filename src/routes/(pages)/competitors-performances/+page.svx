@@ -1,0 +1,9 @@
+<svelte:head>
+	<title>Les performances des concurrents | { siteData.title }</title>
+</svelte:head>
+
+# Les perfomances des concurrents
+
+Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/) par ses perfomances.
+
+

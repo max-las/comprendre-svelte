@@ -1,0 +1,158 @@
+<style>
+  table {
+    table-layout: fixed;
+  }
+</style>
+
+<script lang="ts">
+  import siteData from "$lib/site-data.json";
+  import PageNav from "$lib/components/nav/PageNav.svelte";
+  import type { PageData } from "./$types";
+  import TaskList from "$lib/demo/tasklist/TaskList.svelte";
+  import Compare from "$lib/components/competitors/Compare.svelte";
+  import { selectedCompetitor } from '$lib/stores';
+
+  export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>La syntaxe des concurrents | { siteData.title }</title>
+</svelte:head>
+
+# La syntaxe des concurrents
+
+Svelte n'est pas le premier framework à proposer une approche à base de composants à la syntaxe plus ou moins déclarative. Les deux principaux concurrents qui lui précèdent sont [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/).
+
+Voyons d'abord en quoi la syntaxe de Svelte se différencie de celle de ces derniers. Pour ce faire, nous allons examiner le code permettant d'obtenir le composant suivant (une liste de tâches)&nbsp;:
+
+<div class="block">
+  <TaskList />
+</div>
+
+<Compare
+  subject={{ fileName: "TaskList.svelte", name: "Svelte", code: data.highlighted.TaskListSvelte }}
+  competitors={[
+    { fileName: "TaskList.js", name: "React", code: data.highlighted.TaskListReactJs },
+    { fileName: "TaskList.vue", name: "Vue.js", code: data.highlighted.TaskListVue }
+  ]} />
+
+{#if $selectedCompetitor === "React"}
+
+La première différence entre React et Svelte est qu'un composant React s'écrit entièrement en javascript, avec toutefois une particularité : il est autorisé à retourner directement du code proche du HTML. Cette syntaxe se nomme **JSX**. Les différences entre cette syntaxe et celle de Svelte sont résumées dans le tableau suivant&nbsp;:
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>React</th>
+      <th>Svelte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Les composants sont déclarés sous forme de fonctions (ou classes) javascript, qui doivent être exportées pour être réutilisées
+      </td>
+      <td>
+        Chaque fichier <code>.svelte</code> est automatiquement considéré comme un composant, nul besoin de déclarer et d'exporter une fonction à l'intérieur
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Il est impossible d'écrire du CSS dans les composants, mais il est possible d'importer des fichiers CSS comme des fichier JS
+      </td>
+      <td>
+        Il est possible d'écrire du CSS dans une balise <code>&lt;style&gt;</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Les conditions et les boucles ne peuvent se faire directement dans le template. Il faut soit déclarer en amont une fonction qui retourne un morceau de template selon la condition souhaitée et l'appeller; soit se débrouiller pour obtenir une collection de templates à rendre la suite, comme ici en utilisant <code>.map</code> au lieu de <code>.forEach</code>
+      </td>
+      <td>
+        La syntaxe permet d'utiliser des conditions <code>if</code> et des boucles <code>each</code> directement dans le template
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Enfin, la **différence principale** concerne l'aspect [déclaratif](/declarative-programming)&nbsp;:
+
+**En React**, pour déclarer une variable **réactive**, c'est-à-dire dont la mise à jour entraîne automatiquement celle du rendu, il faut utiliser la fonction `useState`. Celle-ci retourne notre variable, initialisée à la valeur passée à `useState`, et une fonction permettant de mettre à jour cette variable de telle manière que le rendu suive. Ainsi, dans le code ci-dessus, changer la variable `text` directement n'aurait aucun effet, tandis qu'appeller `setText` affecte à `text` la valeur passée en argument et délenche une mise à jour du rendu qui reflète ce changement. Cela vaut aussi pour l'état interne du composant&nbsp;: le changement appliqué à `text` ne sera conservé que s'il se fait par le biais de `setText`.<br/>
+Pour autant, `setText` ne change pas **immédiatement** la valeur de `text`, ce changement ne sera répercuté qu'à la prochaine itération. Autrement dit, lire la valeur de `text` juste après un appel à `setText` retournera la valeur de `text` *avant* sa mise à jour. C'est pourquoi, dans l'exemple ci-dessus, l'incrémentation de `lastId` se fait par l'intermédaire d'une fonction rédigée spécifiquement pour permettre à la fois de conserver le changement, et de retourner la nouvelle valeur.
+
+**En Svelte**, toute variable déclarée **normalement** est automatiquement réactive, et il suffit de la réaffecter **normalement** pour observer les changements. Dans cette exemple, on peut notamment remarquer qu'il suffit d'employer `++lastId` là où en React il fallait définir et appeller la fonction `incrementLastId()`.<br/>
+Par ailleurs, remarquons que Svelte permet de lier facilement la valeur de l'élément `&lt;input&gt;` à la variable `text` grâce à la syntaxe `bind:value={text}`. Pour obtenir le même effet en React, nous sommes contraint de définir la fonction `handleTextChange` qui affecte correctement `text`, et de la référencer dans `onChange` sur l'`input`.
+
+{/if}
+
+{#if $selectedCompetitor === "Vue.js"}
+
+Svelte et Vue.js partagent plusieurs points communs :
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Vue.js</th>
+      <th>Svelte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Composants définis par des fichiers
+      </td>
+      <td>
+        Extension <code>.vue</code>
+      </td>
+      <td>
+        Extension <code>.svelte</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Composants scindés en trois parties <b>style</b>, <b>script</b> et <b>template</b>
+      </td>
+      <td>
+        Les trois parties sont explicitement délimitées par leurs balises respectives
+      </td>
+      <td>
+        La partie template est implicite et ne nécessite pas d'être enveloppée dans une balise
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Boucles et conditions dans le template
+      </td>
+      <td>
+        Syntaxe sous forme d'attributs HTML&nbsp;:<br/>
+        <code>{`<p v-if="myBoolean">Hello !</p>`}</code>
+      </td>
+      <td>
+        Syntaxe détachée de HTML, proche de <a href="https://handlebarsjs.com">Handlebars</a>&nbsp;:<br/>
+        <code>{`{#if myBoolean} <p>Hello !</p> {/if}`}</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Liaison facile de la valeur d'un <code>input</code> à une variable
+      </td>
+      <td><code>{`<input v-model="myVariable">`}</code></td>
+      <td><code>{`<input bind:value={myVariable}>`}</code></td>
+    </tr>
+  </tbody>
+</table>
+
+La principale différence entre Vue.js et Svelte réside dans le fonctionnement de la partie script&nbsp;:
+
+**En Vue.js**, le script exporte toujours un objet qui obéit à une structure particulière, séparant les variables et les méthodes du composant : les variables sont définies dans l'objet retourné par la fonction `data()`, tandis que les méthodes sont définies dans l'objet `methods`. À l'intérieur des méthodes, les variables reactives doivent être préfixées de `this` pour être référencées, comme si le composant était une classe.
+
+**En Svelte**, les variables et les méthodes sont déclarées et référencées telles quelles, comme dans un script basique.<br/>
+Toutefois, pour que le changement de valeur d'une variable se récpercute sur le rendu, la variable doit impérativement être **réaffectée**. En Vue.js, il suffit que la variable soit **manipulée**. C'est pourquoi dans notre exemple, on peut se contenter d'appeler `.push` sur `this.taskList` pour voir apparaître la nouvelle tâche en Vue.js; mais qu'on réaffecte `taskList` à son ancien contenu concaténé au nouveau en Svelte.
+
+{/if}
+
+<PageNav
+  before={{ url: "/reusable-components", text: "Les composants réutilisables" }}
+  after={{ url: "/competitors-perfomances", text: "Les perfomances des concurrents" }}
+/> 

@@ -60,5 +60,5 @@ Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu
 
 <PageNav
   before={{ url: "/declarative-programming", text: "La programmation déclarative" }}
-  after={{ url: "/competitors", text: "Les concurrents" }}
+  after={{ url: "/competitors-syntax", text: "La syntaxe des concurrents" }}
 /> 
