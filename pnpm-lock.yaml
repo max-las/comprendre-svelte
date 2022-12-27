@@ -12,6 +12,7 @@ specifiers:
   eslint: ^8.30.0
   eslint-plugin-svelte3: ^4.0.0
   mdsvex: ^0.10.6
+  photoswipe: ^5.3.4
   sass: ^1.57.0
   shiki: ^0.12.1
   svelte: ^3.55.0
@@ -26,6 +27,7 @@ dependencies:
   '@sveltejs/adapter-static': 1.0.0_@sveltejs+kit@1.0.1
   bootstrap: 5.2.3_@popperjs+core@2.11.6
   bootstrap-icons: 1.10.2
+  photoswipe: 5.3.4
   shiki: 0.12.1
 
 devDependencies:
@@ -1305,6 +1307,11 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
     dev: true
+
+  /photoswipe/5.3.4:
+    resolution: {integrity: sha512-SN+RWHqxJvdwzXJsh8KrG+ajjPpdTX5HpKglEd0k9o6o5fW+QHPkW8//Bo11MB+NQwTa/hFw8BDv2EdxiDXjNw==}
+    engines: {node: '>= 0.12.0'}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}

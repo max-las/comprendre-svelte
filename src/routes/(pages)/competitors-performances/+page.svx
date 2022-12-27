@@ -1,3 +1,31 @@
+<style>
+	img.benchmark {
+		max-width: 1000px;
+	}
+
+	img.virtual-dom {
+		max-width: 600px;
+	}
+</style>
+
+<script lang="ts">
+	import siteData from "$lib/site-data.json";
+	import { onMount } from "svelte";
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import PhotoSwipe from 'photoswipe';
+
+	onMount(() => {
+		const lightbox = new PhotoSwipeLightbox({
+			arrowPrev: false,
+			arrowNext: false,
+			gallery: '.pswp-gallery',
+			children: 'a',
+			pswpModule: () => PhotoSwipe
+		});
+		lightbox.init()
+	});
+</script>
+
 <svelte:head>
 	<title>Les performances des concurrents | { siteData.title }</title>
 </svelte:head>
@@ -6,4 +34,28 @@
 
 Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/) par ses perfomances.
 
+<div class="pswp-gallery pswp-gallery--single-column">
+  <a href="/images/benchmark.webp" 
+    data-pswp-width="2677" 
+    data-pswp-height="2006" 
+    target="_blank"
+		rel="noreferrer" >
+    <img
+			class="benchmark"
+			src="/images/benchmark.webp"
+			alt="Données de perfomances Svelte VS Vue VS React" />
+  </a>
+</div>
 
+<div class="pswp-gallery pswp-gallery--single-column">
+  <a href="/images/virtual-dom.webp" 
+    data-pswp-width="1024" 
+    data-pswp-height="685" 
+    target="_blank"
+		rel="noreferrer" >
+    <img
+			class="virtual-dom"
+			src="/images/virtual-dom.webp"
+			alt="Schéma du DOM virtuel" />
+  </a>
+</div>

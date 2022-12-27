@@ -154,5 +154,5 @@ Toutefois, pour que le changement de valeur d'une variable se récpercute sur le
 
 <PageNav
   before={{ url: "/reusable-components", text: "Les composants réutilisables" }}
-  after={{ url: "/competitors-perfomances", text: "Les perfomances des concurrents" }}
+  after={{ url: "/competitors-performances", text: "Les perfomances des concurrents" }}
 /> 
