@@ -1,10 +1,14 @@
-<style>
-	img.benchmark {
-		max-width: 1000px;
-	}
+<style lang="scss">
+	.normal-flow {
+		width: 100%;
 
-	img.virtual-dom {
-		max-width: 600px;
+		&.benchmark {
+			max-width: 1000px;
+		}
+
+		&.virtual-dom {
+			max-width: 600px;
+		}
 	}
 </style>
 
@@ -34,6 +38,8 @@
 
 Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/) par ses perfomances.
 
+Voici un tableau comparant les trois frameworks en termes de temps nécessaire pour effectuer certaines tâches, de rapidité de démarrage, et de mémoire consommée :
+
 <div class="pswp-gallery pswp-gallery--single-column">
   <a href="/images/benchmark.webp" 
     data-pswp-width="2677" 
@@ -41,11 +47,15 @@ Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.
     target="_blank"
 		rel="noreferrer" >
     <img
-			class="benchmark"
+			class="normal-flow benchmark"
 			src="/images/benchmark.webp"
 			alt="Données de perfomances Svelte VS Vue VS React" />
   </a>
 </div>
+
+Globalement, on remarque que React est à la traîne dans presque tous les domaines, et que Svelte l'emporte dans l'immense majorité des cas, bien que l'écart avec Vue soit nettement moindre qu'avec React. Pour certaines tâches, Vue se montre toutefois légèrement plus rapide que Svelte.
+
+Comment cela est-il possible ?
 
 <div class="pswp-gallery pswp-gallery--single-column">
   <a href="/images/virtual-dom.webp" 
@@ -54,7 +64,7 @@ Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.
     target="_blank"
 		rel="noreferrer" >
     <img
-			class="virtual-dom"
+			class="normal-flow virtual-dom"
 			src="/images/virtual-dom.webp"
 			alt="Schéma du DOM virtuel" />
   </a>
