@@ -79,4 +79,5 @@ En fait, Svelte **"compile"** ses composants en code **JavaScript vanilla optimi
 
 <PageNav
   before={{ url: "/competitors-syntax", text: "La syntaxe des concurrents" }}
+	after={{ url: "/try-svelte", text: "Essayer Svelte" }}
 /> 

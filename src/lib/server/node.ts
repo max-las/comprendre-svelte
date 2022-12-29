@@ -5,8 +5,8 @@ import type { Lang } from "shiki";
 const readLibFile = (ref: string) => readFileSync(`src/lib/${ref}`, "utf8");
 
 const filenameToCamelCase = (filename: string) =>
-  filename.replace(/([.][a-z])/g, (group: string) =>
-    group.toUpperCase().replace('.', '')
+  filename.replace(/([.-][a-z])/g, (group: string) =>
+    group.toUpperCase().replace(/[.-]/, '')
   );
 
 type FileToHighlight = {

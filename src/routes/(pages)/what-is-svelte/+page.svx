@@ -1,3 +1,10 @@
+<style>
+  img.lets-go {
+    width: 100%;
+    max-width: 550px;
+  }
+</style>
+
 <script lang="ts">
   import siteData from "$lib/site-data.json";
   import PageNav from "$lib/components/nav/PageNav.svelte";
@@ -18,7 +25,9 @@ Svelte est un framework de développement web orienté front-end s'appuyant fort
 - Syntaxe plus **concise** que celle des frameworks concurrents
 - **Perfomances** supérieures à celles des frameworks concurrents
 
-Nous allons passer en revue chacun de ces aspects.
+Passons en revue chacun des ces aspects !
+
+<img class="lets-go" src="/images/couple-gf6b22822c_1280.jpg" />
 
 <PageNav
   after={{ url: "/declarative-programming", text: "La programmation déclarative" }}

@@ -14,11 +14,36 @@
       vertical-align: middle;
     }
   }
+
+  .navbar-nav:last-child {
+    margin-left: auto;
+  }
+
+  .hide {
+    display: none;
+  }
 </style>
 
 <script lang="ts">
   import siteData from "$lib/site-data.json";
+  import { onMount } from "svelte";
+
+  let showDropdown = false;
+  let showNavbar = true;
+  let navbarToggler: HTMLElement;
+
+  const updateNavbar = () => {
+    showNavbar = !navbarToggler.offsetParent;
+  };
+
+  const toggleNavbar = () => {
+    showNavbar = !showNavbar;
+  };
+
+  onMount(updateNavbar)
 </script>
+
+<svelte:window on:resize={updateNavbar} />
 
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
@@ -30,18 +55,22 @@
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav">
+      bind:this={navbarToggler}
+      on:click={toggleNavbar}>
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" class:hide={!showNavbar}>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            on:click={() => { showDropdown = !showDropdown; }}
+            href="#"
+            role="button">
             Caractéristiques
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" class:show={showDropdown}>
             <li><a class="dropdown-item" href="/what-is-svelte">
               Qu'est-ce que Svelte ?
             </a></li>
@@ -59,6 +88,18 @@
               Les perfomances des concurrents
             </a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/try-svelte">Essayer Svelte</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://github.com/max-las/comprendre-svelte">
+              <i class="bi bi-github"></i> GitHub
+          </a>
         </li>
       </ul>
     </div>

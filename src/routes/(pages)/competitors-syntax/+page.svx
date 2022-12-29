@@ -148,7 +148,7 @@ La principale différence entre Vue.js et Svelte réside dans le fonctionnement 
 **En Vue.js**, le script exporte toujours un objet qui obéit à une structure particulière, séparant les variables et les méthodes du composant : les variables sont définies dans l'objet retourné par la fonction `data()`, tandis que les méthodes sont définies dans l'objet `methods`. À l'intérieur des méthodes, les variables reactives doivent être préfixées de `this` pour être référencées, comme si le composant était une classe.
 
 **En Svelte**, les variables et les méthodes sont déclarées et référencées telles quelles, comme dans un script basique.<br/>
-Toutefois, pour que le changement de valeur d'une variable se récpercute sur le rendu, la variable doit impérativement être **réaffectée**. En Vue.js, il suffit que la variable soit **manipulée**. C'est pourquoi dans notre exemple, on peut se contenter d'appeler `.push` sur `this.taskList` pour voir apparaître la nouvelle tâche en Vue.js; mais qu'on réaffecte `taskList` à son ancien contenu concaténé au nouveau en Svelte.
+Toutefois, pour que le changement de valeur d'une variable se répercute sur le rendu, la variable doit impérativement être **réaffectée**. En Vue.js, il suffit que la variable soit **manipulée**. C'est pourquoi dans notre exemple, on peut se contenter d'appeler `.push` sur `this.taskList` pour voir apparaître la nouvelle tâche en Vue.js; mais qu'on réaffecte `taskList` à son ancien contenu concaténé au nouveau en Svelte.
 
 {/if}
 

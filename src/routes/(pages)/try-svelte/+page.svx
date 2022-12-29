@@ -1,0 +1,21 @@
+<script lang="ts">
+	import siteData from "$lib/site-data.json";
+	import PageNav from "$lib/components/nav/PageNav.svelte";
+	import type { PageData } from "./$types";
+
+	export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>Les performances des concurrents | { siteData.title }</title>
+</svelte:head>
+
+# Essayer Svelte
+
+Svelte vous intéresse ? Si [Node.js](https://nodejs.org/) est installé sur machine, il est très simple de démarrer un nouveau projet :
+
+{@html data.highlighted.getStartedSh}
+
+Pour en savoir plus sur Svelte et consulter sa documentation, rendez-vous sur :
+- [Le site officiel de Svelte](https://svelte.dev/)
+- [Le site officiel de SvelteKit](https://kit.svelte.dev/), l'étape supérieure de Svelte
