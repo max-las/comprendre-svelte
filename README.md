@@ -2,6 +2,8 @@
 
 Small site exposing in french [Svelte](https://svelte.dev/)'s reasons to be.
 
+Made with [SvelteKit](https://kit.svelte.dev/) and [mdsvex](https://mdsvex.com/)
+
 ## Run locally
 
 ```bash
