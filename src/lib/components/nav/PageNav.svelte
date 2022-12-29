@@ -23,8 +23,6 @@
     text: string
   };
 
-  import { containerSideWidth } from '$lib/stores';
-
   export let before: linkData | null = null, after: linkData | null = null;
 
   let height: number = 0;
@@ -32,16 +30,18 @@
 
 <div class="ghost" style="height: {height}px;"></div>
 
-<div class="content" bind:offsetHeight={height} style="padding-left: {$containerSideWidth}px;">
-  {#if before}
-    <a class="btn btn-secondary" href="{before.url}">
-      <i class="bi bi-chevron-left"></i> {before.text}
-    </a>
-  {/if}
+<div class="content" bind:offsetHeight={height}>
+  <div class="container">
+    {#if before}
+      <a class="btn btn-secondary" href="{before.url}">
+        <i class="bi bi-chevron-left"></i> {before.text}
+      </a>
+    {/if}
 
-  {#if after}
-    <a class="btn btn-primary" href="{after.url}">
-      {after.text} <i class="bi bi-chevron-right"></i>
-    </a>
-  {/if}
+    {#if after}
+      <a class="btn btn-primary" href="{after.url}">
+        {after.text} <i class="bi bi-chevron-right"></i>
+      </a>
+    {/if}
+  </div>
 </div>

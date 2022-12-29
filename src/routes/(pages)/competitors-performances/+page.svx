@@ -14,6 +14,7 @@
 
 <script lang="ts">
 	import siteData from "$lib/site-data.json";
+	import PageNav from "$lib/components/nav/PageNav.svelte";
 	import { onMount } from "svelte";
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import PhotoSwipe from 'photoswipe';
@@ -55,7 +56,7 @@ Voici un tableau comparant les trois frameworks en termes de temps nécessaire p
 
 Globalement, on remarque que React est à la traîne dans presque tous les domaines, et que Svelte l'emporte dans l'immense majorité des cas, bien que l'écart avec Vue soit nettement moindre qu'avec React. Pour certaines tâches, Vue se montre toutefois légèrement plus rapide que Svelte.
 
-Comment cela est-il possible ?
+L'une des raisons pouvant expliquer cette différence est que React et Vue reposent sur la technologie dite du DOM Virtuel. Cela signfie que pendant l'exécution, ces frameworks gardent en mémoire une copie du DOM du navigateur, sur laquelle sont effectuées les modifications nécessaires après un changement d'état, pour enfin rendre dans le DOM du navigateur la différence entre ce dernier et le DOM virtuel.
 
 <div class="pswp-gallery pswp-gallery--single-column">
   <a href="/images/virtual-dom.webp" 
@@ -69,3 +70,13 @@ Comment cela est-il possible ?
 			alt="Schéma du DOM virtuel" />
   </a>
 </div>
+
+<br/>
+
+Svelte, en revanche, s'affranchit complètement de cette étape. Les modifications sont **directement appliquées au DOM** du navigateur. 
+
+En fait, Svelte **"compile"** ses composants en code **JavaScript vanilla optimisé** avant le déploiement, ce qui permet d'obtenir d'excellentes perfomances. Vue.js profite également de la "compilation" de ses composants pour les optimiser un peu, mais doit toujours se plier aux règles du DOM virtuel. Les composants React, eux, ne passent que par une phase de transpilation qui remplace les parties homologues à HTML par du JavaScript.
+
+<PageNav
+  before={{ url: "/competitors-syntax", text: "La syntaxe des concurrents" }}
+/> 

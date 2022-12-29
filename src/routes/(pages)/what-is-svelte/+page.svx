@@ -15,8 +15,8 @@ Svelte est un framework de développement web orienté front-end s'appuyant fort
 **Les caractéristiques clés de Svelte sont les suivantes :**
 - Programmation **déclarative**
 - Décomposition du code en **composants réutilisables**
-- **Perfomances** supérieures à celles des frameworks concurrents
 - Syntaxe plus **concise** que celle des frameworks concurrents
+- **Perfomances** supérieures à celles des frameworks concurrents
 
 Nous allons passer en revue chacun de ces aspects.
 

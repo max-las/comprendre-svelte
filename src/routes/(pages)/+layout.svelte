@@ -18,42 +18,53 @@
 
 <script lang="ts">
   import siteData from "$lib/site-data.json";
-  import { containerSideWidth } from '$lib/stores';
-  import { onMount } from 'svelte';
-  
-  let container: HTMLElement;
-  let containerWidth: number;
-  let containerComputedStyle: CSSStyleDeclaration;
-  let documentWidth: number;
-
-  const setDocumentWidth = (entries: ResizeObserverEntry[]) => {
-    documentWidth = entries[0].contentBoxSize[0].inlineSize;
-  }
-
-  $: {
-    if (containerComputedStyle) {
-      const containerPaddingLeft = parseFloat(containerComputedStyle.paddingLeft);
-      $containerSideWidth = ((documentWidth - containerWidth) / 2) + containerPaddingLeft;
-    }
-  }
-
-  onMount(() => {
-    documentWidth = document.documentElement.clientWidth;
-    const documentObserver = new ResizeObserver(setDocumentWidth);
-    documentObserver.observe(document.documentElement);
-		containerComputedStyle = getComputedStyle(container);
-	});
 </script>
 
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img src="/icons/svelte.svg" alt="svelte icon">
       <span>{ siteData.title }</span>
     </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Caractéristiques
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/what-is-svelte">
+              Qu'est-ce que Svelte ?
+            </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/declarative-programming">
+              La programmation déclarative
+            </a></li>
+            <li><a class="dropdown-item" href="/reusable-components">
+              Les composants réutilisables
+            </a></li>
+            <li><a class="dropdown-item" href="/competitors-syntax">
+              La syntaxe des concurrents
+            </a></li>
+            <li><a class="dropdown-item" href="/competitors-performances">
+              Les perfomances des concurrents
+            </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="container" bind:this={container} bind:offsetWidth={containerWidth}>
+<main class="container">
   <slot />
-</div>
+</main>

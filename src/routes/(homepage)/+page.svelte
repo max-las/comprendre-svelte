@@ -5,10 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    $border: 0.8rem solid #FF3E00;
-    border-top: $border;
-    border-bottom: $border;
+    background-image: url("/images/woman-gb9bb23399_1920.webp");
+    background-position: center;
 
     & > div {
       text-align: center;
@@ -30,7 +28,7 @@
 </svelte:head>
 
 <main>
-  <div>
+  <div class="container">
     <img src="icons/svelte.svg" alt="svelte icon">
 
     <h1>{ siteData.title }</h1>

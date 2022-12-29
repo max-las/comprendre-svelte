@@ -14,7 +14,7 @@
 
 # Les composants réutilisables
 
-Le code Svelte s'écrit dans des fichiers à l'extension *.svelte*, qui représentent des composants. Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler de différentes manières pour former une page complète.
+Le code Svelte s'écrit dans des fichiers à l'extension `.svelte`, qui représentent des composants. Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler de différentes manières pour former une page complète.
 
 Voici un exemple de composant Svelte :
 
@@ -39,8 +39,7 @@ De manière analogue, le script s'écrit dans une balise `<script>`, par défaut
 
 <hr>
 
-L'une des forces des composants est qu'ils sont **isolés**. C'est-à-dire que, par défaut, tout style ou script écrit dans un composant est s'inscrit uniquement dans le contexte de celui-ci. Autrement dit, il ne peut pas affecter d'autre composants par accident.
-*(Il est toutefois possible, au besoin, de partager explicitement certains styles et scripts entre plusieurs composants.)*
+L'une des forces des composants est qu'ils sont **isolés**. C'est-à-dire que, par défaut, tout style ou script écrit dans un composant est s'inscrit uniquement dans le contexte de celui-ci. Autrement dit, il ne peut pas affecter d'autre composants par accident. <small>(Il est toutefois possible, au besoin, de partager explicitement certains styles et scripts entre plusieurs composants.)</small>
 
 Mais ils sont aussi **réutilisables**, ce qui en fait des outils très pratiques pour éviter la duplication de code. En effet, il suffit de copier un code qui se répéte souvent dans un composant et d'insérer ce composant à la place. Ceci permet d'éviter les modifications fastidieuses d'un même code à plusieurs endroits, et donc les éventuelles disparités dues à des oublis.
 
@@ -56,7 +55,7 @@ Voici par exemple un composant qui ajoute un cadre orange au composant précéde
   <DogCatFrame />
 </div>
 
-Notez que changer ici la sélection du composant *DogCat* n'affecte pas le rendu du même composant situé plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui permet encore d'éviter des effets de bord inattendus.
+Notez que changer ici la sélection du composant `DogCat` n'affecte pas le rendu du même composant situé plus haut, et vice-versa. La raison est que chaque instance d'un même composant a son état propre, ce qui permet encore d'éviter des effets de bord inattendus.
 
 <PageNav
   before={{ url: "/declarative-programming", text: "La programmation déclarative" }}
