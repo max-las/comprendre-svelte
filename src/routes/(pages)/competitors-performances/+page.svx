@@ -58,7 +58,7 @@ Voici un tableau comparant les trois frameworks en termes de temps nécessaire p
 
 Globalement, on remarque que React est à la traîne dans presque tous les domaines, et que Svelte l'emporte dans l'immense majorité des cas, bien que l'écart avec Vue soit nettement moindre qu'avec React. Pour certaines tâches, Vue se montre toutefois légèrement plus rapide que Svelte.
 
-L'une des raisons pouvant expliquer cette différence est que React et Vue reposent sur la technologie dite du DOM Virtuel. Cela signfie que pendant l'exécution, ces frameworks gardent en mémoire une copie du DOM du navigateur, sur laquelle sont effectuées les modifications nécessaires après un changement d'état, pour enfin rendre dans le DOM du navigateur la différence entre ce dernier et le DOM virtuel.
+L'une des raisons pouvant expliquer cette différence est que React et Vue reposent sur la technologie dite du DOM Virtuel. Cela signifie que pendant l'exécution, ces frameworks gardent en mémoire une copie du DOM du navigateur, sur laquelle sont effectuées les modifications nécessaires après un changement d'état, pour enfin rendre dans le DOM du navigateur la différence entre ce dernier et le DOM virtuel.
 
 <ZoomTip />
 <div class="pswp-gallery pswp-gallery--single-column">
