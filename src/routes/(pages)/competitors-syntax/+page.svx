@@ -156,9 +156,9 @@ Toutefois, pour que le changement de valeur d'une variable se répercute sur le 
 
 Ainsi, en termes de syntaxe, Svelte apparaît comme nettement **plus simple que React**, et à peu près **aussi simple que Vue.js**.
 
-Mais qu'en est-il des perfomances ?
+Mais qu'en est-il des performances ?
 
 <PageNav
   before={{ url: "/reusable-components", text: "Les composants réutilisables" }}
-  after={{ url: "/competitors-performances", text: "Les perfomances des concurrents" }}
+  after={{ url: "/competitors-performances", text: "Les performances des concurrents" }}
 /> 

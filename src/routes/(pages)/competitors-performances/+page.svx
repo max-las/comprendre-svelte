@@ -36,9 +36,9 @@
 	<title>Les performances des concurrents | { siteData.title }</title>
 </svelte:head>
 
-# Les perfomances des concurrents
+# Les performances des concurrents
 
-Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/) par ses perfomances.
+Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.reactjs.org/) et [Vue.js](https://vuejs.org/) par ses performances.
 
 Voici un tableau comparant les trois frameworks en termes de temps nécessaire pour effectuer certaines tâches, de rapidité de démarrage, et de mémoire consommée :
 
@@ -52,7 +52,7 @@ Voici un tableau comparant les trois frameworks en termes de temps nécessaire p
     <img
 			class="normal-flow benchmark"
 			src="/images/benchmark.webp"
-			alt="Données de perfomances Svelte VS Vue VS React" />
+			alt="Données de performances Svelte VS Vue VS React" />
   </a>
 </div>
 
@@ -78,7 +78,7 @@ L'une des raisons pouvant expliquer cette différence est que React et Vue repos
 
 Svelte, en revanche, s'affranchit complètement de cette étape. Les modifications sont **directement appliquées au DOM** du navigateur. 
 
-En fait, Svelte **"compile"** ses composants en code **JavaScript vanilla optimisé** avant le déploiement, ce qui permet d'obtenir d'excellentes perfomances. Vue.js profite également de la "compilation" de ses composants pour les optimiser un peu, mais doit toujours se plier aux règles du DOM virtuel. Les composants React, eux, ne passent que par une phase de transpilation qui remplace les parties homologues à HTML par du JavaScript.
+En fait, Svelte **"compile"** ses composants en code **JavaScript vanilla optimisé** avant le déploiement, ce qui permet d'obtenir d'excellentes performances. Vue.js profite également de la "compilation" de ses composants pour les optimiser un peu, mais doit toujours se plier aux règles du DOM virtuel. Les composants React, eux, ne passent que par une phase de transpilation qui remplace les parties homologues à HTML par du JavaScript.
 
 <PageNav
   before={{ url: "/competitors-syntax", text: "La syntaxe des concurrents" }}

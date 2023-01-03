@@ -85,7 +85,7 @@
               La syntaxe des concurrents
             </a></li>
             <li><a class="dropdown-item" href="/competitors-performances">
-              Les perfomances des concurrents
+              Les performances des concurrents
             </a></li>
           </ul>
         </li>
