@@ -18,6 +18,7 @@
 	import { onMount } from "svelte";
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
 	import PhotoSwipe from 'photoswipe';
+	import ZoomTip from "$lib/components/ZoomTip.svelte";
 
 	onMount(() => {
 		const lightbox = new PhotoSwipeLightbox({
@@ -41,6 +42,7 @@ Au-delà de la syntaxe, Svelte se différencie également de [React](https://fr.
 
 Voici un tableau comparant les trois frameworks en termes de temps nécessaire pour effectuer certaines tâches, de rapidité de démarrage, et de mémoire consommée :
 
+<ZoomTip />
 <div class="pswp-gallery pswp-gallery--single-column">
   <a href="/images/benchmark.webp" 
     data-pswp-width="2677" 
@@ -58,6 +60,7 @@ Globalement, on remarque que React est à la traîne dans presque tous les domai
 
 L'une des raisons pouvant expliquer cette différence est que React et Vue reposent sur la technologie dite du DOM Virtuel. Cela signfie que pendant l'exécution, ces frameworks gardent en mémoire une copie du DOM du navigateur, sur laquelle sont effectuées les modifications nécessaires après un changement d'état, pour enfin rendre dans le DOM du navigateur la différence entre ce dernier et le DOM virtuel.
 
+<ZoomTip />
 <div class="pswp-gallery pswp-gallery--single-column">
   <a href="/images/virtual-dom.webp" 
     data-pswp-width="1024" 

@@ -14,7 +14,7 @@
 
 # Les composants réutilisables
 
-Le code Svelte s'écrit dans des fichiers à l'extension `.svelte`, qui représentent des composants. Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler de différentes manières pour former une page complète.
+Le code Svelte s'écrit dans des fichiers à l'extension `.svelte`, qui représentent des composants. Les composants peuvent être considérés comme des morceaux de page web, qu'il est possible d'assembler pour former une page complète. Cette approche a l'avantage de favoriser l'organisation et la réutilisation du code, ce qui simplifie la maintenance.
 
 Voici un exemple de composant Svelte :
 

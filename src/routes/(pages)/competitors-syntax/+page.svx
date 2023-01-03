@@ -66,7 +66,7 @@ La première différence entre React et Svelte est qu'un composant React s'écri
     </tr>
     <tr>
       <td>
-        Les conditions et les boucles ne peuvent se faire directement dans le template. Il faut soit déclarer en amont une fonction qui retourne un morceau de template selon la condition souhaitée et l'appeller; soit se débrouiller pour obtenir une collection de templates à rendre la suite, comme ici en utilisant <code>.map</code> au lieu de <code>.forEach</code>
+        Les conditions et les boucles ne peuvent se faire directement dans le template. Il faut soit déclarer en amont une fonction qui retourne un morceau de template selon la condition souhaitée et l'appeller; soit se débrouiller pour obtenir une collection de templates à rendre à la suite, comme ici en utilisant <code>.map</code> au lieu de <code>.forEach</code>
       </td>
       <td>
         La syntaxe permet d'utiliser des conditions <code>if</code> et des boucles <code>each</code> directement dans le template
@@ -77,10 +77,10 @@ La première différence entre React et Svelte est qu'un composant React s'écri
 
 Enfin, la **différence principale** concerne l'aspect [déclaratif](/declarative-programming)&nbsp;:
 
-**En React**, pour déclarer une variable **réactive**, c'est-à-dire dont la mise à jour entraîne automatiquement celle du rendu, il faut utiliser la fonction `useState`. Celle-ci retourne notre variable, initialisée à la valeur passée à `useState`, et une fonction permettant de mettre à jour cette variable de telle manière que le rendu suive. Ainsi, dans le code ci-dessus, changer la variable `text` directement n'aurait aucun effet, tandis qu'appeller `setText` affecte à `text` la valeur passée en argument et délenche une mise à jour du rendu qui reflète ce changement. Cela vaut aussi pour l'état interne du composant&nbsp;: le changement appliqué à `text` ne sera conservé que s'il se fait par le biais de `setText`.<br/>
+**En React**, pour déclarer une variable **réactive** <small>(c'est-à-dire dont la mise à jour entraîne automatiquement celle du rendu)</small>, il faut utiliser la fonction `useState`. Celle-ci retourne notre variable, initialisée à la valeur passée à `useState`, et une fonction permettant de mettre à jour cette variable de telle manière que le rendu suive. Ainsi, dans le code ci-dessus, changer la variable `text` directement n'aurait aucun effet, tandis qu'appeller `setText` affecte à `text` la valeur passée en argument et délenche une mise à jour du rendu qui reflète ce changement. Cela vaut aussi pour l'état interne du composant&nbsp;: le changement appliqué à `text` ne sera conservé que s'il se fait par le biais de `setText`.<br/>
 Pour autant, `setText` ne change pas **immédiatement** la valeur de `text`, ce changement ne sera répercuté qu'à la prochaine itération. Autrement dit, lire la valeur de `text` juste après un appel à `setText` retournera la valeur de `text` *avant* sa mise à jour. C'est pourquoi, dans l'exemple ci-dessus, l'incrémentation de `lastId` se fait par l'intermédaire d'une fonction rédigée spécifiquement pour permettre à la fois de conserver le changement, et de retourner la nouvelle valeur.
 
-**En Svelte**, toute variable déclarée **normalement** est automatiquement réactive, et il suffit de la réaffecter **normalement** pour observer les changements. Dans cette exemple, on peut notamment remarquer qu'il suffit d'employer `++lastId` là où en React il fallait définir et appeller la fonction `incrementLastId()`.<br/>
+**En Svelte**, toute variable déclarée **normalement** est automatiquement réactive, et il suffit de la réaffecter **normalement** pour observer les changements. Dans cet exemple, on peut notamment remarquer qu'il suffit d'employer `++lastId` là où en React il fallait définir et appeller la fonction `incrementLastId()`.<br/>
 Par ailleurs, remarquons que Svelte permet de lier facilement la valeur de l'élément `&lt;input&gt;` à la variable `text` grâce à la syntaxe `bind:value={text}`. Pour obtenir le même effet en React, nous sommes contraint de définir la fonction `handleTextChange` qui affecte correctement `text`, et de la référencer dans `onChange` sur l'`input`.
 
 {/if}
@@ -145,12 +145,18 @@ Svelte et Vue.js partagent plusieurs points communs :
 
 La principale différence entre Vue.js et Svelte réside dans le fonctionnement de la partie script&nbsp;:
 
-**En Vue.js**, le script exporte toujours un objet qui obéit à une structure particulière, séparant les variables et les méthodes du composant : les variables sont définies dans l'objet retourné par la fonction `data()`, tandis que les méthodes sont définies dans l'objet `methods`. À l'intérieur des méthodes, les variables reactives doivent être préfixées de `this` pour être référencées, comme si le composant était une classe.
+**En Vue.js**, le script exporte toujours un objet qui obéit à une structure particulière, séparant les variables et les méthodes du composant : les variables sont définies dans l'objet retourné par la fonction `data()`, tandis que les méthodes sont définies dans l'objet `methods`. À l'intérieur des méthodes, les variables **réactives** <small>(c'est-à-dire dont la mise à jour entraîne automatiquement celle du rendu)</small> doivent être préfixées de `this` pour être référencées, comme si le composant était une classe.
 
 **En Svelte**, les variables et les méthodes sont déclarées et référencées telles quelles, comme dans un script basique.<br/>
 Toutefois, pour que le changement de valeur d'une variable se répercute sur le rendu, la variable doit impérativement être **réaffectée**. En Vue.js, il suffit que la variable soit **manipulée**. C'est pourquoi dans notre exemple, on peut se contenter d'appeler `.push` sur `this.taskList` pour voir apparaître la nouvelle tâche en Vue.js; mais qu'on réaffecte `taskList` à son ancien contenu concaténé au nouveau en Svelte.
 
 {/if}
+
+<hr/>
+
+Ainsi, en termes de syntaxe, Svelte apparaît comme nettement **plus simple que React**, et à peu près **aussi simple que Vue.js**.
+
+Mais qu'en est-il des perfomances ?
 
 <PageNav
   before={{ url: "/reusable-components", text: "Les composants réutilisables" }}
